@@ -1,0 +1,34 @@
+{
+  "username": "Tên tài khoản",
+  "password": "Mật khẩu",
+  "retypePassword": "Nhập lại mật khẩu",
+  "wrongRetypePassword": "Nhập lại mật khẩu không chính xác",
+  "resetPassword": "Đặt lại mật khẩu",
+  "resetuserPassword": "Đặt lại mật khẩu cho tài khoản {{username}}",
+  "sendResetPasswordLink": "Vui lòng ấn nút sao chép rồi gửi liên kết này đến {{name}} để đặt lại mật khẩu",
+  "name": "Tên",
+  "addUser": "Thêm tài khoản",
+  "addRole": "Thêm chức vụ",
+  "login": "Đăng nhập",
+  "logout": "Đăng xuất",
+  "logoutConfirm": "Bạn có chắc muốn đăng xuất?",
+  "email": "Email",
+  "role": "Chức vụ",
+  "setRoleOf": "Thiết lập quyền cho {{name}}",
+  "myProfile": "Thông tin của tôi",
+  "userList": "Danh sách tài khoản",
+  "user": "Tài khoản",
+  "roles": "Chức vụ",
+  "deleteUserRole": "Xóa chức vụ {{role}} của người dùng",
+  "roleName": "Tên chức vụ",
+  "permissions": "Quyền",
+  "userRoles": "Chức vụ người dùng",
+  "sessions": "Phiên đăng nhập",
+  "Meta": {
+    "name": "Tài khoản",
+    "description": "Quản lý tài khoản hệ thống"
+  },
+  "Validation": {
+    "IsUsername": "Chỉ gồm chữ cái thường, số và dấu chấm. Phải bắt đầu với chữ cái"
+  }
+}

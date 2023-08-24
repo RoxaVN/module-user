@@ -1,0 +1,65 @@
+{
+  "name": "@roxavn/module-user",
+  "version": "0.2.4",
+  "scripts": {
+    "build": "roxavn build",
+    "dev": "roxavn dev"
+  },
+  "license": "MIT",
+  "author": "Roxavn",
+  "roxavn": {},
+  "type": "module",
+  "sideEffects": false,
+  "dependencies": {
+    "ua-parser-js": "^1.0.34"
+  },
+  "devDependencies": {
+    "@roxavn/cli": "^0.2.0",
+    "@types/ua-parser-js": "^0.7.36",
+    "typescript": "^5.0.4"
+  },
+  "peerDependencies": {
+    "@mantine/core": "^6.0.0",
+    "@mantine/prism": "^6.0.0",
+    "@remix-run/node": "^1.19.1",
+    "@remix-run/react": "^1.19.1",
+    "@roxavn/core": "^0.2.0",
+    "@roxavn/module-utils": "^0.2.0",
+    "@tabler/icons-react": "^2.12.0",
+    "lodash-es": "^4.17.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typeorm": "^0.3.10"
+  },
+  "exports": {
+    ".": "./dist/esm/index.js",
+    "./hook": "./dist/esm/hook/index.js",
+    "./web": "./dist/esm/web/index.js",
+    "./web/init": "./dist/esm/web/init.js",
+    "./base": "./dist/esm/base/index.js",
+    "./server": "./dist/esm/server/index.js"
+  },
+  "typesVersions": {
+    "*": {
+      "hook": [
+        "dist/esm/hook/index.d.ts"
+      ],
+      "web": [
+        "dist/esm/web/index.d.ts"
+      ],
+      "web/init": [
+        "dist/esm/web/init.d.ts"
+      ],
+      "base": [
+        "dist/esm/base/index.d.ts"
+      ],
+      "server": [
+        "dist/esm/server/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "/dist",
+    "/static"
+  ]
+}

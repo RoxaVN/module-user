@@ -1,0 +1,34 @@
+{
+  "username": "Username",
+  "password": "Password",
+  "retypePassword": "Retype password",
+  "wrongRetypePassword": "Wrong retype password",
+  "resetPassword": "Reset password",
+  "resetuserPassword": "Reset password of user {{username}}",
+  "sendResetPasswordLink": "Please copy and send this link to {{name}} to reset password",
+  "name": "Name",
+  "addUser": "Add user",
+  "addRole": "Add role",
+  "login": "Login",
+  "logout": "Logout",
+  "logoutConfirm": "Are you sure to logout?",
+  "email": "Email",
+  "role": "Role",
+  "setRoleOf": "Set role of {{name}}",
+  "myProfile": "My profile",
+  "userList": "User list",
+  "user": "User",
+  "roles": "Roles",
+  "roleName": "Role name",
+  "deleteUserRole": "Delete user role {{role}}",
+  "permissions": "Permissions",
+  "userRoles": "User roles",
+  "sessions": "Sessions",
+  "Meta": {
+    "name": "User",
+    "description": "System account management"
+  },
+  "Validation": {
+    "IsUsername": "Contains only lowercase letters, numbers and periods. Must starts with a letter"
+  }
+}
