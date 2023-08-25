@@ -16,7 +16,7 @@ const userIdentitySource = new ApiSource<IdentityResponse>(
 
 class GetUserIdentitiesRequest extends ExactProps<GetUserIdentitiesRequest> {
   @MinLength(1)
-  public readonly userid: string;
+  public readonly userId: string;
 }
 
 export const userIdentityApi = {

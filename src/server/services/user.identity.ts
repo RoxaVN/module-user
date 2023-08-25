@@ -10,7 +10,7 @@ export class GetUserIdentityApiService extends InjectDatabaseService {
   async handle(request: InferApiRequest<typeof userIdentityApi.getAll>) {
     const items = await this.entityManager.getRepository(Identity).find({
       where: {
-        userId: request.userid,
+        userId: request.userId,
       },
     });
     return { items };
