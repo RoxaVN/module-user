@@ -18,8 +18,9 @@ export const LoginForm = ({ onSuccess }: LoginFormProps): JSX.Element => {
       </Title>
       <ApiFormGroup
         api={passwordIdentityApi.auth}
-        onSuccess={(data) => {
+        onSuccess={async (data) => {
           authService.setTokenData(data);
+          await authService.authenticate(data);
           onSuccess && onSuccess(data);
         }}
         fields={[
