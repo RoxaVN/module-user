@@ -113,14 +113,17 @@ export class IdentityAndRegisterService extends BaseService {
 
 @serverModule.injectable()
 export class CreateIdentityService extends InjectDatabaseService {
-  async handle(request: { subject: string; type: string; userId: string }) {
-    const identity = new Identity();
-    identity.type = request.type;
-    identity.subject = request.subject;
-    identity.userId = request.userId;
+  async handle(request: {
+    subject: string;
+    type: string;
+    userId: string;
+    metadata?: any;
+  }) {
+    const item = new Identity();
+    Object.assign(item, request);
 
-    await this.databaseService.manager.save(identity);
-    return { id: identity.id };
+    await this.databaseService.manager.getRepository(Identity).insert(item);
+    return { id: item.id };
   }
 }
 
