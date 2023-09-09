@@ -14,6 +14,9 @@ export const permissions = accessManager.makePermissions(scopes, {
   ReadUser: {
     allowedScopes: [accessManager.scopes.Owner],
   },
+  UpdateUser: {
+    allowedScopes: [accessManager.scopes.Owner],
+  },
   ReadUserRoles: {
     allowedScopes: [accessManager.scopes.Owner],
   },
