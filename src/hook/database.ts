@@ -23,7 +23,7 @@ export class CreateAdminUserHook extends BaseService {
   async handle() {
     const count = await this.databaseService.manager
       .getRepository(User)
-      .count();
+      .count({ where: { username: 'admin' } });
     if (count < 1) {
       const identity = new Identity();
       identity.metadata = {
