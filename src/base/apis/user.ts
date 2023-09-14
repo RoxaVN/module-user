@@ -9,6 +9,7 @@ import {
   IsArray,
   IsDateString,
   IsOptional,
+  Max,
   MaxLength,
   Min,
   MinLength,
@@ -56,7 +57,13 @@ class GetUsersRequest extends ExactProps<GetUsersRequest> {
   @Min(1)
   @TransformNumber()
   @IsOptional()
-  public readonly page = 1;
+  public readonly page?: number;
+
+  @Min(1)
+  @Max(100)
+  @TransformNumber()
+  @IsOptional()
+  public readonly pageSize?: number;
 }
 
 class GetUserRequest extends ExactProps<GetUserRequest> {

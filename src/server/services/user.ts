@@ -25,7 +25,7 @@ export class GetUserApiService extends InjectDatabaseService {
 export class GetUsersApiService extends InjectDatabaseService {
   async handle(request: InferApiRequest<typeof userApi.getMany>) {
     const page = request.page || 1;
-    const pageSize = 10;
+    const pageSize = request.pageSize || 10;
 
     const [users, totalItems] = await this.entityManager
       .getRepository(User)
