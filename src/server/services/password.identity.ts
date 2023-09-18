@@ -134,9 +134,8 @@ export class RecoveryPasswordApiService extends BaseService {
     const expiredAt = Date.now() + Env.SHORT_TIME_TO_LIVE;
 
     await this.databaseService.manager
-      .createQueryBuilder()
+      .createQueryBuilder(Identity, 'identity')
       .insert()
-      .into(Identity)
       .values({
         subject: request.userId,
         type: constants.identityTypes.PASSWORD,

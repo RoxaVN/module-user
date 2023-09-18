@@ -101,9 +101,8 @@ export class SetAdminRoleHook
         return adminRole;
       });
       await this.entityManager
-        .createQueryBuilder()
+        .createQueryBuilder(UserRole, 'userRole')
         .insert()
-        .into(UserRole)
         .values(adminroles)
         .orIgnore()
         .execute();

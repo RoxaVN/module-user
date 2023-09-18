@@ -98,7 +98,7 @@ export class IdentityAndRegisterService extends BaseService {
       identity.type = request.type;
       identity.subject = request.subject;
       identity.userId = user.id;
-      await this.databaseService.manager.save(identity);
+      await this.databaseService.manager.getRepository(Identity).save(identity);
     }
 
     return this.createAccessTokenService.handle({

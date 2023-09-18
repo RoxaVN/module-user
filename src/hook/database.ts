@@ -31,11 +31,11 @@ export class CreateAdminUserHook extends BaseService {
       };
       const user = new User();
       user.username = 'admin';
-      await this.databaseService.manager.save(user);
+      await this.databaseService.manager.getRepository(User).save(user);
       identity.user = user;
       identity.subject = user.id;
       identity.type = constants.identityTypes.PASSWORD;
-      await this.databaseService.manager.save(identity);
+      await this.databaseService.manager.getRepository(Identity).save(identity);
 
       const role = await this.databaseService.manager.findOneBy(Role, {
         name: roles.Admin.name,
@@ -46,7 +46,9 @@ export class CreateAdminUserHook extends BaseService {
         adminRole.user = user;
         adminRole.role = role;
         adminRole.scope = role.scope;
-        await this.databaseService.manager.save(adminRole);
+        await this.databaseService.manager
+          .getRepository(UserRole)
+          .save(adminRole);
       }
     }
   }
