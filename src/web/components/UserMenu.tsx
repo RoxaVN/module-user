@@ -1,12 +1,18 @@
 import { Menu } from '@mantine/core';
 import { Link } from '@remix-run/react';
-import { authService, useAuthUser, userService } from '@roxavn/core/web';
+import {
+  authService,
+  useAuthUser,
+  userService,
+  webModule as coreWebModule,
+} from '@roxavn/core/web';
 import { IconLogout, IconUserCircle } from '@tabler/icons-react';
 
 import { webModule } from '../module.js';
 
 export const UserMenu = () => {
   const { t } = webModule.useTranslation();
+  const tCore = coreWebModule.useTranslation().t;
   const authUser = useAuthUser();
   const { renderItem } = userService.reference.use(
     { ids: [authUser?.id] },
@@ -34,7 +40,7 @@ export const UserMenu = () => {
             token && authService.logout(token);
           }}
         >
-          {t('logout')}
+          {tCore('logout')}
         </Menu.Item>
       </Menu.Dropdown>
     </Menu>

@@ -7,12 +7,12 @@ import {
   ModuleT,
   PageItem,
   utils,
+  webModule,
 } from '@roxavn/core/web';
 import { IconCheckbox, IconCookie } from '@tabler/icons-react';
 import { UAParser } from 'ua-parser-js';
 
 import { accessTokenApi } from '../../base/index.js';
-import { webModule } from '../module.js';
 
 const Page = () => {
   const tokenData = authService.getTokenData();

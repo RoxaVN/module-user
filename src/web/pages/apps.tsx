@@ -22,7 +22,6 @@ import { IconApps } from '@tabler/icons-react';
 import { useState } from 'react';
 
 import { UserMenu } from '../components/index.js';
-import { webModule as userWebModule } from '../module.js';
 
 const BASE = '/apps';
 
@@ -31,7 +30,6 @@ export default function () {
   const [opened, setOpened] = useState(false);
   const [webModule, setWebModule] = useState<WebModule>();
   const tCore = coreWebModule.useTranslation().t;
-  const { t } = userWebModule.useTranslation();
 
   return (
     <AppShell
@@ -95,7 +93,7 @@ export default function () {
                   variant="outline"
                   to={webRoutes.Login.generate({ ref: BASE })}
                 >
-                  {t('login')}
+                  {tCore('login')}
                 </Button>
               }
             />
