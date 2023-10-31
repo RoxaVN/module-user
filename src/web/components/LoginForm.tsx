@@ -24,7 +24,6 @@ export const LoginForm = ({ onSuccess }: LoginFormProps): JSX.Element => {
       <ApiFormGroup
         api={passwordIdentityApi.auth}
         onSuccess={async (data) => {
-          authService.setTokenData(data);
           await authService.authenticate(data);
           onSuccess && onSuccess(data);
         }}
