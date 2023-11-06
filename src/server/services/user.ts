@@ -31,7 +31,9 @@ export class GetUsersApiService extends InjectDatabaseService {
       .getRepository(User)
       .findAndCount({
         where: {
-          username: request.username && ILike(request.username + '%'),
+          username: request.usernameText
+            ? ILike(request.username + '%')
+            : request.username,
           createdDate:
             request.createdDate &&
             And(
@@ -57,7 +59,9 @@ export class SearchUsersApiService extends InjectDatabaseService {
       select: ['id', 'username'],
       where: {
         id: request.ids && In(request.ids),
-        username: request.usernameText && ILike(`${request.usernameText}%`),
+        username: request.usernameText
+          ? ILike(request.username + '%')
+          : request.username,
       },
       take: request.ids ? request.ids.length : 10,
     });

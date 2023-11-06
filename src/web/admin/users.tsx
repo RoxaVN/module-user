@@ -52,7 +52,7 @@ const Page = () => {
       ]}
       filters={[
         {
-          name: 'username',
+          name: 'usernameText',
           input: <TextInput label={t('username')} />,
         },
         {
