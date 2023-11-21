@@ -26,7 +26,9 @@ export const permissions = accessManager.makePermissions(scopes, {
   ReadRoles: accessManager.permissions.ReadRoles,
 
   DeleteAccessToken: {
-    allowedScopes: [accessManager.scopes.Owner],
+    allowedScopes: [
+      accessManager.scopes.ResourceOwner(scopes.AccessToken.name),
+    ],
   },
   ReadAccessTokens: {
     allowedScopes: [accessManager.scopes.Owner],
