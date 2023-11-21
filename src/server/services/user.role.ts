@@ -199,13 +199,15 @@ export class CheckUserPermissionServiceEx
       .andWhere(':permission = ANY(role.permissions)', { permission })
       .andWhere(
         new Brackets((qb) => {
-          scopes.map((scope) => {
+          scopes.map((scope, index) => {
             qb.orWhere(
               new Brackets((qb1) => {
                 qb1
-                  .where('userRole.scope = :scope', { scope: scope.name })
-                  .andWhere('userRole.scopeId = :scopeId', {
-                    scopeId: scope.id || '',
+                  .where(`userRole.scope = :scope${index}`, {
+                    [`scope${index}`]: scope.name,
+                  })
+                  .andWhere(`userRole.scopeId = :scopeId${index}`, {
+                    [`scopeId${index}`]: scope.id || '',
                   });
               })
             );
