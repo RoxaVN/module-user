@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.8](https://github.com/RoxaVN/roxavn/compare/v0.2.7...v0.2.8) (2023-12-06)
+
+### Bug Fixes
+
+- can't logout ([cf3b706](https://github.com/RoxaVN/roxavn/commit/cf3b706919240537331e02e3838dfc8183408732))
+- check permission wrong if has many scopes ([356a492](https://github.com/RoxaVN/roxavn/commit/356a492abbde108f3625fd291b6dbf04950b2d5d))
+
 ### [0.2.7](https://github.com/RoxaVN/roxavn/compare/v0.2.6...v0.2.7) (2023-11-21)
 
 ### [0.2.6](https://github.com/RoxaVN/roxavn/compare/v0.2.5...v0.2.6) (2023-11-11)
