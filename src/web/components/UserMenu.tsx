@@ -35,10 +35,7 @@ export const UserMenu = () => {
         <Menu.Item
           icon={<IconLogout size={14} />}
           component="button"
-          onClick={() => {
-            const token = authService.getTokenData();
-            token && authService.logout(token);
-          }}
+          onClick={() => authService.logout()}
         >
           {tCore('logout')}
         </Menu.Item>
