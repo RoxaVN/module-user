@@ -1,6 +1,7 @@
 import {
   ApiSource,
   ExactProps,
+  IsOptional,
   MinLength,
   accessManager,
 } from '@roxavn/core/base';
@@ -17,6 +18,12 @@ const userIdentitySource = new ApiSource<IdentityResponse>(
 class GetUserIdentitiesRequest extends ExactProps<GetUserIdentitiesRequest> {
   @MinLength(1)
   public readonly userId: string;
+
+  @IsOptional()
+  public readonly subject?: string;
+
+  @IsOptional()
+  public readonly type?: string;
 }
 
 export const userIdentityApi = {
