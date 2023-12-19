@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](https://github.com/RoxaVN/roxavn/compare/v0.2.8...v0.2.9) (2023-12-19)
+
+### Features
+
+- change GetUserIdentityApiService to GetUserIdentitiesApiService ([5d051dd](https://github.com/RoxaVN/roxavn/commit/5d051dd85c987e876d00e41a15eeff8ed340d247))
+
 ### [0.2.8](https://github.com/RoxaVN/roxavn/compare/v0.2.7...v0.2.8) (2023-12-06)
 
 ### Bug Fixes
