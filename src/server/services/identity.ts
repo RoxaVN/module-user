@@ -128,6 +128,16 @@ export class CreateIdentityService extends InjectDatabaseService {
 }
 
 @serverModule.injectable()
+export class UpdateIdentityService extends InjectDatabaseService {
+  async handle(request: { identityId: string; metadata: any }) {
+    await this.databaseService.manager
+      .getRepository(Identity)
+      .update({ id: request.identityId }, { metadata: request.metadata });
+    return {};
+  }
+}
+
+@serverModule.injectable()
 export class GetIdentityBytypeService extends InjectDatabaseService {
   async handle(request: { subject: string; type: string }) {
     const item = await this.entityManager.getRepository(Identity).findOne({
