@@ -13,7 +13,11 @@ import {
 } from '@roxavn/core/server';
 import { TokenService } from '@roxavn/module-utils/server';
 
-import { constants, passwordIdentityApi } from '../../base/index.js';
+import {
+  constants,
+  passwordIdentityApi,
+  wrongPasswordException,
+} from '../../base/index.js';
 import { Env } from '../config.js';
 import { Identity } from '../entities/index.js';
 import { serverModule } from '../module.js';
@@ -57,7 +61,7 @@ export class AuthPasswordApiService extends BaseService {
       ));
 
     if (!isValid) {
-      throw new UnauthorizedException();
+      throw wrongPasswordException;
     }
 
     return await this.createAccessTokenService.handle({

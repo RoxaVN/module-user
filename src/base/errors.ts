@@ -7,3 +7,10 @@ export const wrongRetypePasswordException = new ValidationException({
     ns: baseModule.escapedName,
   },
 });
+
+export const wrongPasswordException = new ValidationException({
+  password: {
+    key: 'Error.WrongPassword',
+    ns: baseModule.escapedName,
+  },
+});

@@ -25,7 +25,8 @@
     "description": "System account management"
   },
   "Error": {
-    "WrongRetypePassword": "Wrong retype password"
+    "WrongRetypePassword": "Wrong retype password",
+    "WrongPassword": "Wrong password"
   },
   "Validation": {
     "IsUsername": "Contains only lowercase letters, numbers and periods. Must starts with a letter"
