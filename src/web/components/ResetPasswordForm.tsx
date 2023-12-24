@@ -1,13 +1,11 @@
 import { TextInput, PasswordInput, Title } from '@mantine/core';
-import {
-  Api,
-  InferApiRequest,
-  InferApiResponse,
-  ValidationException,
-} from '@roxavn/core/base';
+import { Api, InferApiRequest, InferApiResponse } from '@roxavn/core/base';
 import { ApiFormGroup } from '@roxavn/core/web';
 
-import { passwordIdentityApi } from '../../base/index.js';
+import {
+  wrongRetypePasswordException,
+  passwordIdentityApi,
+} from '../../base/index.js';
 import { webModule } from '../module.js';
 
 interface ResetPasswordFormProps {
@@ -44,12 +42,7 @@ export const ResetPasswordForm = ({
         onSuccess={(data) => onSuccess && onSuccess(data)}
         onBeforeSubmit={(params) => {
           if (params.password !== params.retypePassword) {
-            throw new ValidationException({
-              retypePassword: {
-                key: 'wrongRetypePassword',
-                ns: webModule.escapedName,
-              },
-            });
+            throw wrongRetypePasswordException;
           }
           return params;
         }}

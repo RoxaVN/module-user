@@ -2,7 +2,6 @@
   "username": "Tên tài khoản",
   "password": "Mật khẩu",
   "retypePassword": "Nhập lại mật khẩu",
-  "wrongRetypePassword": "Nhập lại mật khẩu không chính xác",
   "resetPassword": "Đặt lại mật khẩu",
   "resetuserPassword": "Đặt lại mật khẩu cho tài khoản {{username}}",
   "sendResetPasswordLink": "Vui lòng ấn nút sao chép rồi gửi liên kết này đến {{name}} để đặt lại mật khẩu",
@@ -24,6 +23,9 @@
   "Meta": {
     "name": "Tài khoản",
     "description": "Quản lý tài khoản hệ thống"
+  },
+  "Error": {
+    "WrongRetypePassword": "Nhập lại mật khẩu không chính xác"
   },
   "Validation": {
     "IsUsername": "Chỉ gồm chữ cái thường, số và dấu chấm. Phải bắt đầu với chữ cái"

@@ -2,7 +2,6 @@
   "username": "Username",
   "password": "Password",
   "retypePassword": "Retype password",
-  "wrongRetypePassword": "Wrong retype password",
   "resetPassword": "Reset password",
   "resetuserPassword": "Reset password of user {{username}}",
   "sendResetPasswordLink": "Please copy and send this link to {{name}} to reset password",
@@ -24,6 +23,9 @@
   "Meta": {
     "name": "User",
     "description": "System account management"
+  },
+  "Error": {
+    "WrongRetypePassword": "Wrong retype password"
   },
   "Validation": {
     "IsUsername": "Contains only lowercase letters, numbers and periods. Must starts with a letter"
