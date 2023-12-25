@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.10](https://github.com/RoxaVN/roxavn/compare/v0.2.9...v0.2.10) (2023-12-25)
+
+### Features
+
+- add UpdateIdentityService ([97f407b](https://github.com/RoxaVN/roxavn/commit/97f407bc26836e5d967e7ee9c7f2cf2cc81db251))
+- add wrongPasswordException ([bd447b8](https://github.com/RoxaVN/roxavn/commit/bd447b841d8ef833c640f46b61024e62c8534124))
+- add wrongRetypePasswordException ([a9a0889](https://github.com/RoxaVN/roxavn/commit/a9a088951b6ba90e19a3eb7dbf63287a25eb4990))
+
 ### [0.2.9](https://github.com/RoxaVN/roxavn/compare/v0.2.8...v0.2.9) (2023-12-19)
 
 ### Features
