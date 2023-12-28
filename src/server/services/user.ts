@@ -1,10 +1,15 @@
 import { InferApiRequest, NotFoundException } from '@roxavn/core/base';
+import {
+  BaseService,
+  DatabaseService,
+  InjectDatabaseService,
+  inject,
+} from '@roxavn/core/server';
 import { And, ILike, In, LessThan, MoreThan } from 'typeorm';
 
 import { userApi } from '../../base/index.js';
 import { User } from '../entities/index.js';
 import { serverModule } from '../module.js';
-import { InjectDatabaseService } from '@roxavn/core/server';
 
 @serverModule.useApi(userApi.getOne)
 export class GetUserApiService extends InjectDatabaseService {
@@ -76,10 +81,36 @@ export class CreateUserApiService extends InjectDatabaseService {
   async handle(request: InferApiRequest<typeof userApi.create>) {
     const user = new User();
     user.username = request.username;
-    await this.entityManager.save(user);
+    await this.entityManager.getRepository(User).save(user);
 
     return {
       id: user.id,
     };
+  }
+}
+
+@serverModule.injectable()
+export class GetOrCreateUserService extends BaseService {
+  constructor(
+    @inject(GetUsersApiService)
+    public getUsersApiService: GetUsersApiService,
+    @inject(DatabaseService)
+    public databaseService: DatabaseService
+  ) {
+    super();
+  }
+
+  async handle(request: { username: string }) {
+    const { items } = await this.getUsersApiService.handle({
+      username: request.username,
+    });
+    if (items.length) {
+      return items[0];
+    } else {
+      const user = new User();
+      user.username = request.username;
+      await this.databaseService.manager.getRepository(User).save(user);
+      return user;
+    }
   }
 }
