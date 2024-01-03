@@ -65,7 +65,7 @@ export class SearchUsersApiService extends InjectDatabaseService {
       where: {
         id: request.ids && In(request.ids),
         username: request.usernameText
-          ? ILike(request.username + '%')
+          ? ILike(request.usernameText + '%')
           : request.username,
       },
       take: request.ids ? request.ids.length : 10,
