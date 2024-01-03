@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.11](https://github.com/RoxaVN/roxavn/compare/v0.2.10...v0.2.11) (2024-01-03)
+
+### Features
+
+- add GetOrCreateUserService ([0f14246](https://github.com/RoxaVN/roxavn/commit/0f1424651fb15814ced099e79dca92081be411f7))
+- create system user ([e992637](https://github.com/RoxaVN/roxavn/commit/e992637782ea52e1af9f15c7de13b4ba1e4cf407))
+
+### Bug Fixes
+
+- serach users with usernameText ([d6a41e9](https://github.com/RoxaVN/roxavn/commit/d6a41e9c6f2c82b96a8c632b08e37305bb288ba1))
+
 ### [0.2.10](https://github.com/RoxaVN/roxavn/compare/v0.2.9...v0.2.10) (2023-12-25)
 
 ### Features
