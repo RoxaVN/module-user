@@ -1,3 +1,4 @@
+import { constants as coreConstants } from '@roxavn/core/base';
 import { BaseService, DatabaseService, inject } from '@roxavn/core/server';
 import { TokenService } from '@roxavn/module-utils/server';
 
@@ -23,7 +24,7 @@ export class CreateAdminUserHook extends BaseService {
   async handle() {
     const count = await this.databaseService.manager
       .getRepository(User)
-      .count({ where: { username: 'admin' } });
+      .count({ where: { username: coreConstants.User.ADMIN } });
     if (count < 1) {
       const identity = new Identity();
       identity.metadata = {
