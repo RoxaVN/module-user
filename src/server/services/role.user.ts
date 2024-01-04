@@ -13,7 +13,7 @@ import { serverModule } from '../module.js';
 export class GetRoleUsersApiService extends InjectDatabaseService {
   async handle(request: InferApiRequest<typeof roleUserApi.getMany>) {
     const page = request.page || 1;
-    const pageSize = 10;
+    const pageSize = request.pageSize || 10;
     let filterRole;
     if (request.module) {
       filterRole = { module: request.module };
@@ -51,7 +51,7 @@ export class GetRoleUsersApiService extends InjectDatabaseService {
 export class SearchRoleUsersApiService extends InjectDatabaseService {
   async handle(request: InferApiRequest<typeof roleUserApi.search>) {
     const page = request.page || 1;
-    const pageSize = 10;
+    const pageSize = request.pageSize || 10;
 
     const [items, totalItems] = await this.entityManager
       .getRepository(UserRole)

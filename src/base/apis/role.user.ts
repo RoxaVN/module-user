@@ -1,10 +1,10 @@
 import {
   accessManager,
   ApiSource,
-  ExactProps,
   IsOptional,
   Min,
   MinLength,
+  PaginationRequest,
   TransformNumber,
 } from '@roxavn/core/base';
 import { permissions, scopes } from '../access.js';
@@ -16,7 +16,7 @@ const roleUserSource = new ApiSource<UserResponse>(
   baseModule
 );
 
-class GetRoleUsersRequest extends ExactProps<GetRoleUsersRequest> {
+class GetRoleUsersRequest extends PaginationRequest<GetRoleUsersRequest> {
   @Min(1)
   @TransformNumber()
   public readonly roleId: number;
@@ -32,14 +32,9 @@ class GetRoleUsersRequest extends ExactProps<GetRoleUsersRequest> {
   // add field for DynamicScope
   @IsOptional()
   public readonly scope?: string;
-
-  @Min(1)
-  @TransformNumber()
-  @IsOptional()
-  public readonly page?: number;
 }
 
-class SearchRoleUsersRequest extends ExactProps<SearchRoleUsersRequest> {
+class SearchRoleUsersRequest extends PaginationRequest<SearchRoleUsersRequest> {
   @IsOptional()
   public readonly usernameText?: string;
 
@@ -49,11 +44,6 @@ class SearchRoleUsersRequest extends ExactProps<SearchRoleUsersRequest> {
 
   @IsOptional()
   public readonly scope: string;
-
-  @Min(1)
-  @TransformNumber()
-  @IsOptional()
-  public readonly page?: number;
 }
 
 export const roleUserApi = {

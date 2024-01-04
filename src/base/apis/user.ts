@@ -9,12 +9,10 @@ import {
   IsArray,
   IsDateString,
   IsOptional,
-  Max,
   MaxLength,
-  Min,
   MinLength,
+  PaginationRequest,
   TransformArray,
-  TransformNumber,
 } from '@roxavn/core/base';
 import { baseModule } from '../module.js';
 import { permissions } from '../access.js';
@@ -46,7 +44,7 @@ class SearchUsersRequest extends ExactProps<SearchUsersRequest> {
   public readonly usernameText?: string;
 }
 
-class GetUsersRequest extends ExactProps<GetUsersRequest> {
+class GetUsersRequest extends PaginationRequest<GetUsersRequest> {
   @IsOptional()
   public readonly username?: string;
 
@@ -59,17 +57,6 @@ class GetUsersRequest extends ExactProps<GetUsersRequest> {
   @IsDateString({}, { each: true })
   @IsOptional()
   public readonly createdDate?: Date[];
-
-  @Min(1)
-  @TransformNumber()
-  @IsOptional()
-  public readonly page?: number;
-
-  @Min(1)
-  @Max(100)
-  @TransformNumber()
-  @IsOptional()
-  public readonly pageSize?: number;
 }
 
 class GetUserRequest extends ExactProps<GetUserRequest> {
