@@ -1,5 +1,5 @@
 import { constants as coreConstants } from '@roxavn/core/base';
-import { BaseService, CreateRoleService, inject } from '@roxavn/core/server';
+import { BaseService, CreateRolesService, inject } from '@roxavn/core/server';
 
 import { roles } from '../base/index.js';
 import { CreateAdminUserHook } from './database.js';
@@ -8,8 +8,8 @@ import { GetOrCreateUserService, serverModule } from '../server/index.js';
 @serverModule.injectable()
 export class InstallHook extends BaseService {
   constructor(
-    @inject(CreateRoleService)
-    private createRoleService: CreateRoleService,
+    @inject(CreateRolesService)
+    private createRolesService: CreateRolesService,
     @inject(CreateAdminUserHook)
     private createAdminUserHook: CreateAdminUserHook,
     @inject(GetOrCreateUserService)
@@ -19,7 +19,7 @@ export class InstallHook extends BaseService {
   }
 
   async handle() {
-    await this.createRoleService.handle(roles);
+    await this.createRolesService.handle(roles);
     await this.createAdminUserHook.handle();
     await this.getOrCreateUserService.handle({
       username: coreConstants.User.SYSTEM,

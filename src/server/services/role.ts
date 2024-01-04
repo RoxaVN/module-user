@@ -1,6 +1,6 @@
 import { InferApiRequest, type Role as RoleType } from '@roxavn/core/base';
 import {
-  CreateRoleService,
+  CreateRolesService,
   InjectDatabaseService,
   SetAdminRoleService,
 } from '@roxavn/core/server';
@@ -22,11 +22,9 @@ export class GetRolesApiService extends InjectDatabaseService {
         where: {
           id: request.ids && In(request.ids),
           module: request.module,
-          scope: request.scope
-            ? request.scope
-            : request.scopeText
+          scope: request.scopeText
             ? ILike(`%${request.scopeText}%`)
-            : undefined,
+            : request.scope,
           hasId: !!request.scopeId,
         },
         take: pageSize,
@@ -110,10 +108,10 @@ export class SetAdminRoleHook
   }
 }
 
-@serverModule.rebind(CreateRoleService)
+@serverModule.rebind(CreateRolesService)
 export class CreateRolesHook
   extends InjectDatabaseService
-  implements CreateRoleService
+  implements CreateRolesService
 {
   async handle(roles: Record<string, RoleType>) {
     const roleRepository = this.entityManager.getRepository(Role);
