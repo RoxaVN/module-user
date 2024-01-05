@@ -88,7 +88,7 @@ const Page = () => {
           label: t('resetPassword'),
           icon: IconKey,
           modal: ({ closeModal }) => ({
-            title: t('resetuserPassword', { username: item.username }),
+            title: t('resetUserPassword', { username: item.username }),
             children: (
               <ApiConfirmFormGroup
                 api={passwordIdentityApi.recovery}

@@ -3,7 +3,7 @@
   "password": "Password",
   "retypePassword": "Retype password",
   "resetPassword": "Reset password",
-  "resetuserPassword": "Reset password of user {{username}}",
+  "resetUserPassword": "Reset password of user {{username}}",
   "sendResetPasswordLink": "Please copy and send this link to {{name}} to reset password",
   "addUser": "Add user",
   "addRole": "Add role",
