@@ -1,6 +1,6 @@
 {
   "name": "@roxavn/module-user",
-  "version": "0.2.11",
+  "version": "0.2.12",
   "scripts": {
     "build": "roxavn build",
     "dev": "roxavn dev",

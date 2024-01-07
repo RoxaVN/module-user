@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.12](https://github.com/RoxaVN/roxavn/compare/v0.2.11...v0.2.12) (2024-01-07)
+
+### Features
+
+- update translation ([a28d7fe](https://github.com/RoxaVN/roxavn/commit/a28d7fe2f26e9a4bc05fee919be7786c1d80fb58))
+- use PaginationRequest ([3b90ddd](https://github.com/RoxaVN/roxavn/commit/3b90dddea9f33ee66f5f11d1a8b36578f0b7151b))
+
 ### [0.2.11](https://github.com/RoxaVN/roxavn/compare/v0.2.10...v0.2.11) (2024-01-03)
 
 ### Features
